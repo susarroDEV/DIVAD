@@ -1,0 +1,22 @@
+User-agent: *
+Allow: /
+
+# Sitemap location (uncomment and update when you have a sitemap)
+# Sitemap: https://yourdomain.com/sitemap.xml
+
+# Common paths to disallow (uncomment if needed)
+# Disallow: /admin/
+# Disallow: /private/
+# Disallow: /.well-known/
+# Disallow: /api/
+
+# Allow common resource files
+Allow: /favicon.ico
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
