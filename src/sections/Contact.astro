@@ -1,0 +1,134 @@
+---
+import ContactCard from "../components/ContactCard.astro";
+---
+
+<section class="contact-section">
+  <div class="contact-title">
+    <h1>
+      Contacta con DIVAD
+    </h1>
+    <div class="line-divider"/>
+    <h2>
+      Estamos aquí para hacer realidad tu proyecto metálico. Puedes contactar con nosotros a través de estos medios.
+    </h2>
+  </div>
+  <section class="contact-cards">
+    <ContactCard type="phone" />
+    <ContactCard type="email" />
+    <ContactCard type="location" />
+  </section>
+</section>
+
+<style>
+  h1 {
+    font-size: 3.5rem;
+    font-weight: bold;
+    color: var(--color-tertiary);
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    font-weight: normal;
+    color: var(--color-tertiary);
+  }
+
+  .contact-section {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin: 5rem auto;
+    flex-wrap: wrap;
+  }
+
+  .contact-title {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    text-align: center;
+  }
+
+  .contact-cards {
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 1rem;
+  }
+
+  .line-divider {
+    margin-bottom: .5rem;
+    width: 20%;
+    height: 5px;
+    background-color: rgba(var(--color-secondary-rgb-value), 1);
+  }
+
+  @media (width < 1024px) {
+    .contact-section {
+      width: 95%;
+      flex-direction: column;
+      gap: 3rem;
+      margin: 3rem auto;
+    }
+
+    .contact-cards {
+      flex-wrap: wrap;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .contact-section {
+      width: 95%;
+      margin: 2.5rem auto;
+      gap: 2.5rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    .contact-cards {
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .line-divider {
+      width: 30%;
+    }
+  }
+
+  @media (width < 480px) {
+    .contact-section {
+      width: 100%;
+      margin: 2rem auto;
+      gap: 2rem;
+      padding: 0 0.5rem;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+      padding: 0 1rem;
+    }
+
+    .contact-cards {
+      gap: 1rem;
+    }
+
+    .line-divider {
+      width: 40%;
+    }
+  }
+</style>

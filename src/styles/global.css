@@ -1,0 +1,148 @@
+@import "tailwindcss";
+
+
+.kanit-font {
+  font-family: "Kanit", sans-serif;
+}
+
+
+:root {
+  --color-background-light: #FFFFFFDD;
+  --color-background-light-rgb-value: 240, 240, 240;
+  --color-primary: #E7DED0;
+  --color-primary-rgb-value: 231, 222, 208;
+  --color-secondary: #E08E01;
+  --color-secondary-rgb-value: 224, 142, 1;
+  --color-tertiary: #614F30;
+  --color-tertiary-rgb-value: 97, 79, 48;
+  --color-quaternary: #0E2538;
+  --color-quaternary-rgb-value: 14, 37, 56;
+  --color-quinary: #224766;
+  --color-quinary-rgb-value: 34, 71, 102;
+}
+
+html::-webkit-scrollbar {
+  width: 6px;
+}
+
+html::-webkit-scrollbar-thumb {
+  background-color: var(--color-primary);
+    border-radius: .35rem;
+}
+
+html::-webkit-scrollbar-track {
+  background-color: #E08E01;
+}
+
+html::-webkit-scrollbar-thumb:active {
+  background-color: var(--color-quinary);
+}
+
+html::-webkit-scrollbar-corner {
+  background-color: #003737;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--color-quinary) #003737;
+  }
+}
+
+html {
+  background: #DDD;
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  overflow-x: hidden;
+}
+
+body {
+  min-height: 90dvh;
+  overflow-x: hidden;
+  font-family: 'ITC Avant Garde Pro';
+  font-display: swap;
+}
+
+#main-header {
+  min-height: 86px;
+  will-change: transform, background;
+}
+
+@media (width < 768px) {
+  #main-header {
+    min-height: 70px;
+  }
+
+  /* Improve text readability on mobile */
+  body {
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  /* Ensure touch targets are at least 44px */
+  button, 
+  a, 
+  input[type="submit"], 
+  input[type="button"] {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improve form inputs on mobile */
+  input, 
+  textarea, 
+  select {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Reduce margins and padding on very small screens */
+  * {
+    box-sizing: border-box;
+  }
+
+  /* Improve spacing for mobile */
+  section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}
+
+/* Responsive images and media */
+img, 
+video, 
+iframe {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Prevent horizontal scrolling */
+* {
+  max-width: 100%;
+}
+
+::selection {
+  background-color: rgba(var(--color-tertiary-rgb-value), .9);
+  color: var(--color-contrast);
+}
+
+::-moz-selection {
+  background-color: rgba(var(--color-tertiary-rgb-value), .9);
+  color: var(--color-contrast);
+}
+
+input::selection,
+textarea::selection,
+select::selection {
+  background-color: rgba(var(--color-secondary-rgb-value), 0.3);
+  color: #000000;
+}
+
+input::-moz-selection,
+textarea::-moz-selection,
+select::-moz-selection {
+  background-color: rgba(var(--color-secondary-rgb-value), 0.3);
+  color: #000000;
+}

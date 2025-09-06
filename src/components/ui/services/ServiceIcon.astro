@@ -1,0 +1,21 @@
+---
+import GearIcon from './GearIcon.astro'
+import HomeIcon from './HomeIcon.astro'
+import LockIcon from './LockIcon.astro'
+import PuzzleIcon from './PuzzleIcon.astro'
+import LightningIcon from './LightningIcon.astro'
+import WrenchIcon from './WrenchIcon.astro'
+
+interface Props {
+  id: string
+}
+
+const { id } = Astro.props as Props
+---
+
+{ id === 'building' &&  <WrenchIcon /> }
+{ id === 'repairs' && <GearIcon /> }
+{ id === 'industry' &&  <HomeIcon /> }
+{ id === 'decoration' &&  <PuzzleIcon /> }
+{ id === 'protection' &&  <LockIcon /> }
+{ id === 'special' &&  <LightningIcon /> }

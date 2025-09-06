@@ -1,0 +1,206 @@
+---
+import PhoneIcon from './ui/communications/PhoneIcon.astro'
+import EmailIcon from './ui/communications/EmailIcon.astro'
+import LocationIcon from './ui/communications/LocationIcon.astro'
+import ChatIcon from './ui/communications/ChatIcon.astro'
+import ClockIcon from './ui/communications/ClockIcon.astro'
+
+interface Props {
+  type: 'phone' | 'email' | 'location'
+}
+
+const { type } = Astro.props as Props
+---
+
+<article>
+  <div class="icon">
+    {
+      (type === 'phone' && <PhoneIcon />) || 
+      (type === 'email' && <EmailIcon />) || 
+      (type === 'location' && <LocationIcon />)
+    } 
+  </div>
+  <h2>
+    {
+      (type === 'phone' && 'Teléfono / WhatsApp') ||
+      (type === 'email' && 'Correo electrónico') ||
+      (type === 'location' && 'Ubicación del taller')
+    }
+  </h2>
+  <h1>
+    {
+      (type === 'phone' && '637 56 95 02') ||
+      (type === 'email' && 'divadtransformadosmetalicos@gmail.com') ||
+      (type === 'location' && 'Polígono de Valdeguerra')
+    }
+  </h1>
+  <h3>
+    {
+      (type === 'phone' && <ChatIcon /> <span>WhatsApp</span>) ||
+      (type === 'email' && 'Consultas detalladas') ||
+      (type === 'location' && <ClockIcon /> <span>Lun - Vie 8:00 - 14:00</span>)
+    }
+  </h3>
+</article>
+
+<style>
+  article {
+    background-color: rgba(var(--color-primary-rgb-value), .65);
+    color: var(--color-secondary);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem;
+    width: 300px;
+    height: 270px;
+    box-sizing: border-box;
+    box-shadow: 0 10px 10px rgba(0, 0, 0, 0.1);
+    transition: border-color .3s ease-in-out;
+  }
+
+  h1 {
+    width: 100%;
+    font-size: 1.25rem;
+    overflow-wrap: break-word;
+    font-weight: 900;
+    text-align: center;
+    margin: auto;
+    line-height: 1.3;
+  }
+
+  h2 {
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+    color: var(--color-tertiary);
+  }
+
+  h3 {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+    color: var(--color-tertiary);
+    margin-top: auto;
+  }
+
+  .icon {
+    color: var(--color-primary);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 100%;
+    padding: 1rem;
+    background-color: var(--color-secondary);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .icon :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+
+  article:hover {
+    border-color: (var(--color-secondary-rgb-value), .7)
+  }
+
+  article:hover .icon {
+    transform: scale(1.25);
+  }
+
+  @media (width < 768px) {
+    article {
+      width: 280px;
+      height: 250px;
+      padding: 1.5rem;
+      gap: 0.8rem;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+    }
+
+    h2 {
+      font-size: 1rem;
+    }
+
+    h3 {
+      font-size: 0.9rem;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      padding: 0.8rem;
+    }
+  }
+
+  @media (width < 480px) {
+    article {
+      width: 260px;
+      height: 230px;
+      padding: 1.2rem;
+      gap: 0.7rem;
+    }
+
+    h1 {
+      font-size: 1rem;
+      line-height: 1.2;
+    }
+
+    h2 {
+      font-size: 0.95rem;
+    }
+
+    h3 {
+      font-size: 0.85rem;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+
+    .icon {
+      width: 45px;
+      height: 45px;
+      padding: 0.7rem;
+    }
+  }
+
+  @media (width < 320px) {
+    article {
+      width: 240px;
+      height: 220px;
+      padding: 1rem;
+    }
+
+    h1 {
+      font-size: 0.95rem;
+    }
+
+    h2 {
+      font-size: 0.9rem;
+    }
+
+    h3 {
+      font-size: 0.8rem;
+    }
+
+    .icon {
+      width: 40px;
+      height: 40px;
+      padding: 0.6rem;
+    }
+  }
+</style>

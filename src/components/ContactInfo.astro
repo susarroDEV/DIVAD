@@ -1,0 +1,86 @@
+---
+import EmailIcon from './ui/communications/EmailIcon.astro'
+import PhoneIcon from './ui/communications/PhoneIcon.astro'
+import LocationIcon from './ui/communications/LocationIcon.astro'
+
+interface Props {
+  type: 'phone' | 'email' | 'location'
+}
+
+const { type } = Astro.props as Props
+
+---
+
+{
+  (type === 'phone' && (
+    <article>
+      <PhoneIcon />
+      <p>
+        637 56 95 02
+      </p>
+    </article>
+  )) || (
+  type === 'location' && (
+    <article>
+      <LocationIcon />
+      <p>
+        Polígono de Valdeguerra, Las Ventas de Albares, León
+      </p>
+    </article>
+  )) || (
+  type === 'email' && (
+    <article>
+      <EmailIcon />
+      <p>
+        divadtransformadosmetalicos@gmail.com
+      </p>
+    </article>
+  ))
+}
+
+<style>
+  article {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 50px;
+    color: #E08E01;
+    border-radius: .5rem;
+    padding: .75rem 1rem;
+    transition: width .3s ease-in-out;
+    border: 2px solid #E08E01;
+    background-color: rgba(224, 142, 1, 0.048);
+  }
+
+  p {
+    color: #E7DED0;
+    font-size: 1.15rem;
+  }
+
+  @media (width < 768px) {
+    article {
+      padding: 0.5rem 0.75rem;
+      gap: 0.4rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+  }
+
+  @media (width < 480px) {
+    article {
+      padding: 0.4rem 0.6rem;
+      gap: 0.3rem;
+      flex-direction: column;
+      text-align: center;
+    }
+
+    p {
+      font-size: 0.8rem;
+      line-height: 1.2;
+    }
+  }
+</style>
+

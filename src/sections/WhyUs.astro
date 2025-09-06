@@ -1,0 +1,41 @@
+---
+import HighlightCard from '../components/HighlightCard.astro'
+---
+
+<section>
+  <HighlightCard type="experience"/>
+  <HighlightCard type="quality"/>
+  <HighlightCard type="scope"/>
+</section>
+
+<style>
+  section {
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: center;
+    align-items: stretch;
+    gap: 2rem;
+    margin: 5rem auto;
+    flex-wrap: wrap;
+  }
+
+  @media (width < 768px) {
+    section {
+      width: 95%;
+      margin: 3rem auto;
+      gap: 1.5rem;
+    }
+  }
+
+  @media (width < 480px) {
+    section {
+      width: 100%;
+      margin: 2rem auto;
+      gap: 1rem;
+      flex-direction: column;
+      align-items: center;
+      padding: 0 0.5rem;
+    }
+  }
+</style>

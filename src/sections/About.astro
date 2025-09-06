@@ -1,0 +1,257 @@
+---
+import FeatureCard from "../components/FeatureCard.astro";
+---
+
+<section class="about-section">
+  <div class="description-container">
+    <h1>Conoce el taller</h1>
+    <div class="line-divider"/>
+    <h2>
+      DIVAD Transformados Metálicos es un pequeño taller local con gran experiencia en el mundo del metal.
+    </h2>
+    <p>
+      Al frente se encuentra David, un profesional con más de 30 años de experiencia en el sector. Su dominio técnico, la meticulosa atención al detalle y el compromiso absoluto con cada proyecto convierten al trabajo bien hecho en la verdadera seña de identidad de la casa.
+    </p>
+    <p>
+      Aquí no existen intermediarios: hablas directamente con quien diseña, corta, suelda y entrega el resultado final, y esa cercanía se refleja en la calidad de cada pieza.
+    </p>
+  </div>
+  <aside class="features-container">
+    <h1>
+      D
+    </h1>
+    <section>
+      <FeatureCard>
+        <h3>
+          30+
+        </h3>
+        <p>
+          Años de experiencia
+        </p>
+      </FeatureCard>
+      <FeatureCard>
+        <h3>
+          100%
+        </h3>
+        <p>
+          Atención personalizada
+        </p>
+      </FeatureCard>
+      <FeatureCard>
+        <h3>
+          100%
+        </h3>
+        <p>
+          Trabajo detallista
+        </p>
+      </FeatureCard>
+    </section>
+  </aside>
+</section>
+
+<style>
+  h1 {
+    font-size: 4rem;
+    font-weight: bolder;
+    color: var(--color-primary);
+  }
+  
+  h2 {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: .5rem;
+    line-height: 1lh;
+    color: rgba(var(--color-primary-rgb-value), .75);
+    width: 95%;
+  }
+
+  .description-container  p {
+    font-size: 1.1rem;
+    color: #cacbcc;
+    text-wrap: wrap;
+    text-align: pretty;
+    width: 95%;
+    margin-top: 1rem;
+  }
+
+  .about-section {
+    background-color: var(--color-quaternary);
+    color: var(--color-background-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    place-items: center;
+    padding: 4rem 0;
+  }
+
+  .description-container {
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .features-container {
+    width: 30%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+  }
+
+  .features-container > section {
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    justify-content: center;
+  }
+
+  .features-container > h1 {
+    width: 10rem;
+    height: 10rem;
+    font-size: 5.75rem;
+    background-color: rgba(var(--color-quinary-rgb-value), .25);
+    border: 3px solid rgba(var(--color-secondary-rgb-value), .8);
+    box-shadow: 0 0 10px rgba(var(--color-secondary-rgb-value), .5);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    line-height: 1;
+    box-sizing: border-box;
+  }
+
+  .line-divider {
+    margin-bottom: 1rem;
+    width: 20%;
+    height: 5px;
+    background-color: rgba(var(--color-secondary-rgb-value), .8);
+  }
+
+  @media (width < 1024px) {
+    .about-section {
+      flex-direction: column;
+      padding: 3rem 1rem;
+      gap: 3rem;
+    }
+
+    .description-container {
+      width: 80%;
+      align-items: center;
+      text-align: center;
+    }
+
+    .features-container {
+      width: 80%;
+    }
+
+    h1 {
+      font-size: 3rem;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      width: 100%;
+    }
+
+    .description-container p {
+      width: 100%;
+    }
+
+    .features-container > h1 {
+      width: 8rem;
+      height: 8rem;
+      font-size: 4.5rem;
+    }
+  }
+
+  @media (width < 768px) {
+    .about-section {
+      padding: 2.5rem 1rem;
+      gap: 2.5rem;
+    }
+
+    .description-container {
+      width: 90%;
+    }
+
+    .features-container {
+      width: 90%;
+    }
+    
+    h1 {
+      font-size: 2.5rem;
+    }
+
+    h2 {
+      font-size: 1.2rem;
+    }
+
+    .description-container p {
+      font-size: 1rem;
+    }
+    
+    .features-container > section {
+      gap: 1rem;
+      flex-wrap: wrap;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    .features-container > h1 {
+      width: 7rem;
+      height: 7rem;
+      font-size: 4rem;
+    }
+
+    .line-divider {
+      width: 30%;
+    }
+  }
+
+  @media (width < 480px) {
+    .about-section {
+      padding: 2rem 0.5rem;
+      gap: 2rem;
+    }
+
+    .description-container {
+      width: 95%;
+    }
+
+    .features-container {
+      width: 95%;
+    }
+
+    h1 {
+      font-size: 2rem;
+    }
+
+    h2 {
+      font-size: 1.1rem;
+    }
+
+    .description-container p {
+      font-size: 0.95rem;
+    }
+    
+    .features-container > section {
+      flex-direction: row;
+      gap: 0.8rem;
+    }
+
+    .features-container > h1 {
+      width: 6rem;
+      height: 6rem;
+      font-size: 3.5rem;
+    }
+
+    .line-divider {
+      width: 40%;
+    }
+  }
+</style>

@@ -1,0 +1,147 @@
+---
+import PeopleIcon from './ui/PeopleIcon.astro'
+import SparkIcon from './ui/SparkIcon.astro'
+import StarIcon from './ui/StarIcon.astro'
+
+interface Props {
+  type: 'experience' | 'quality' | 'scope'
+}
+
+const { type } = Astro.props as Props
+---
+
+<article>
+  <div class="icon">
+    {
+      (type === 'experience' && <StarIcon />) || 
+      (type === 'quality' && <SparkIcon />) || 
+      (type === 'scope' && <PeopleIcon />)
+    } 
+  </div>
+  <h1>
+    {
+      (type === 'experience' && '+30 Años de Experiencia') || (type === 'quality' && 'Atención a Medida') || 
+      (type === 'scope' && 'Para Todos')
+    }
+  </h1>
+  <p>
+    {
+      (type === 'experience' && 'Con más de tres décadas trabajando el metal, garantizamos un servicio de calidad sin intermediarios.') || 
+      (type === 'quality' && 'Cuidamos cada detalle para ofrecer un servicio adecuado a todos nuestros clientes.') || 
+      (type === 'scope' && 'Nuestro trabajo está al alcance de particulares, empresas y profesionales del sector.')
+    }
+  </p>
+</article>
+
+<style>
+  article {
+    background-color: rgba(var(--color-primary-rgb-value), .45);
+    color: var(--color-secondary);
+    border: 2.5px solid rgba(var(--color-secondary-rgb-value), .2);
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem;
+    width: 100%;
+    max-width: 350px;
+    height: 300px;
+    box-sizing: border-box;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: border-color .3s ease-in-out;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-align: center;
+    margin: 0;
+    line-height: 1.3;
+  }
+
+  p {
+    color: var(--color-tertiary);
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-align: center;
+    margin: 0;
+    line-height: 1.5;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+  }
+
+  .icon {
+    color: var(--color-primary);
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    border-radius: 100%;
+    padding: 1rem;
+    background-color: var(--color-secondary);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .icon :global(svg) {
+    width: 100%;
+    height: 100%;
+  }
+
+  article:hover {
+    border-color: (var(--color-secondary-rgb-value), .7)
+  }
+
+  article:hover .icon {
+    transform: scale(1.25);
+  }
+
+  @media (width < 768px) {
+    article {
+      max-width: 280px;
+      height: 200px;
+      padding: 1.5rem;
+      gap: 1.2rem;
+    }
+
+    h1 {
+      font-size: 1.2rem;
+    }
+
+    p {
+      font-size: 1rem;
+    }
+
+    .icon {
+      width: 50px;
+      height: 50px;
+      padding: 0.8rem;
+    }
+  }
+
+  @media (width < 480px) {
+    article {
+      max-width: 100%;
+      padding: 1.2rem;
+      gap: 1rem;
+    }
+
+    h1 {
+      font-size: 1.1rem;
+    }
+
+    p {
+      font-size: 0.9rem;
+    }
+
+    .icon {
+      width: 45px;
+      height: 45px;
+      padding: 0.7rem;
+    }
+  }
+</style>
