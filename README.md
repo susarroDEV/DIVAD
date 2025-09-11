@@ -110,9 +110,3 @@ Aquí tienes una guía rápida:
 ## 📬 Contacto
 
 Si tienes preguntas o sugerencias, no dudes en contactar a [susarroDEV](https://susarrodev.com). 💌
-
-<<<<<<< HEAD
-<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
-=======
-<p align="right">(<a href="#readme-top">volver arriba</a>)</p>
->>>>>>> 20da9cfa1239844b0019a859d532008bf6c7792a
